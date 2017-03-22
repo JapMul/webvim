@@ -8,16 +8,19 @@
 
 " TODO split by plugin ?
 
+let g:ctrlp_cmd = ':NERDTreeClose\|CtrlP'
+let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|git\|web/assets\|web/js/react\|web/js_default/react\|\.php\.html'
+let g:ctrlp_max_files=0
 
 " [> NERDTree <]
 
 " on vim enter opens nerd tree
 function! OpenNerdTree()
     let s:exclude = ['COMMIT_EDITMSG', 'MERGE_MSG']
-    if index(s:exclude, expand('%:t')) < 0
-        NERDTreeFind
-        exec "normal! \<c-w>\<c-w>"
-    endif
+    "if index(s:exclude, expand('%:t')) < 0
+    "    NERDTreeFind
+    "    exec "normal! \<c-w>\<c-w>"
+    "endif
 endfunction
 autocmd VimEnter * call OpenNerdTree()
 
@@ -26,7 +29,12 @@ autocmd VimEnter * call OpenNerdTree()
 let g:NERDTreeWinSize = 35
 
 " show hidden files
-let g:NERDTreeShowHidden=1
+let g:NERDTreeShowHidden=0
+
+let g:NERDTreeWinPos = "right"
+
+let g:nerdtree_tabs_open_on_console_startup = 1
+map <Leader>f :NERDTreeFind<CR>
 
 " single click to open nodes
 " let g:NERDTreeMouseMode=3
@@ -69,7 +77,7 @@ noremap <c-_> :call NERDComment(0, "Toggle")<cr>
 " status line always opened
 set laststatus=2
 
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 
 "  powerline font
 let g:airline_powerline_fonts=1

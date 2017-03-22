@@ -3,6 +3,43 @@
 "
 " author: Bertrand Chevrier <chevrier.bertrand@gmail.com>
 "
+nnoremap ; :
+
+nmap <Leader>deb i<RIGHT>echo '<pre>';<CR>print_r();<CR>echo '</pre>';<CR>exit;<UP><UP><RIGHT><RIGHT><RIGHT>
+
+nmap <Leader>f :%s/)$\n    {/) {/ge \| :%s/\/\*\*\n\ *\*\ \(@.*\)\n\ *\*\//\/\*\*\ \1\ \*\//ge \| :%s/}\n}/}\r\r}/ge<CR>
+
+nmap <Leader>j / \*\/\nclass<CR>O* @author Jap Mul <jap@branchonline.nl><ESC>O*<ESC>:nohlsearch<CR>
+
+" tab navigation like firefox
+nnoremap <C-S-tab> :tabprevious<CR>
+nnoremap <C-tab>   :tabnext<CR>
+nnoremap <C-t>     :tabnew<CR>
+inoremap <C-S-tab> <Esc>:tabprevious<CR>i
+inoremap <C-tab>   <Esc>:tabnext<CR>i
+inoremap <C-t>     <Esc>:tabnew<CR>
+
+" switch windows without manually having to set window mode
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+nnoremap ∆ :m .+1<CR>==
+nnoremap ˚ :m .-2<CR>==
+inoremap ∆ <Esc>:m .+1<CR>==gi
+inoremap ˚ <Esc>:m .-2<CR>==gi
+vnoremap ∆ :m '>+1<CR>gv=gv
+vnoremap ˚ :m '<-2<CR>gv=gv
+
+if &term =~ '^screen'
+    " tmux will send xterm-style keys when its xterm-keys option is on
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
+endif
+
 
 " leader
 let g:mapleader = ","
@@ -27,7 +64,9 @@ nnoremap <S-left> :tabp<CR>
 inoremap <c-u> <esc>viwUi
 
 " remove last search highlight
-nnoremap <C-l> :nohlsearch<CR><C-l>
+"nnoremap <C-l> :nohlsearch<CR><C-l>
+nmap <silent> <leader><space> :nohlsearch<CR>
+
 
 " Wrap a word in double quotes
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel

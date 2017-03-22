@@ -36,5 +36,10 @@ Plug 'moll/vim-node',                             { 'commit' : '13b31218447335e1
 Plug 'syngan/vim-vimlint',                        { 'commit' : 'c8b9cd9d8a0fb6dc69667d32819aeef503cff55c'}
 Plug 'ynkdir/vim-vimlparser',                     { 'commit' : '2fff43c58968a18bc01bc8304df68bde01af04d9'}
 Plug 'mattn/emmet-vim',                           { 'commit' : '5b217264dde398699849a0211bbe1a917d8b2f7a'}
+Plug 'kien/ctrlp.vim',                            { 'commit' : 'c1646e3c28d75bcc834af4836f4c6e12296ba891'}
+Plug 'jlanzarotta/bufexplorer',                   { 'commit' : 'a32b979bb33fb08ce270ec28bbd0cadb370de2f1'}
+Plug 'jistr/vim-nerdtree-tabs',                   { 'commit' : '5a91230193fea7f9c8d792cb5c635998d868337d'}
+Plug 'adoy/vim-php-refactoring-toolbox',          { 'commit' : '740a10d5695c4cea3a114767b5490fe7944f1696'}
+
 
 call plug#end()

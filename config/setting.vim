@@ -39,7 +39,7 @@ set incsearch
 
 " copy/paste
 "set paste
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
 
 " folding manual
 set foldmethod=manual
@@ -50,3 +50,7 @@ set mouse=a
 " spell check, to be activated manually
 set spelllang=en_us
 set nospell
+
+set nocompatible
+set ttyfast
+set lazyredraw
