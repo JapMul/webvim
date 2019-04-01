@@ -7,7 +7,7 @@ nnoremap ; :
 
 nmap <Leader>deb i<RIGHT>echo '<pre>';<CR>print_r();<CR>echo '</pre>';<CR>exit;<UP><UP><RIGHT><RIGHT><RIGHT>
 
-nmap <Leader>f :%s/)$\n    {/) {/ge \| :%s/\/\*\*\n\ *\*\ \(@.*\)\n\ *\*\//\/\*\*\ \1\ \*\//ge \| :%s/}\n}/}\r\r}/ge<CR>
+nmap <Leader>F :%s/)$\n    {/) {/ge \| :%s/\/\*\*\n\ *\*\ \(@.*\)\n\ *\*\//\/\*\*\ \1\ \*\//ge \| :%s/}\n}/}\r\r}/ge<CR>
 
 nmap <Leader>j / \*\/\nclass<CR>O* @author Jap Mul <jap@branchonline.nl><ESC>O*<ESC>:nohlsearch<CR>
 
@@ -25,12 +25,12 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-nnoremap ∆ :m .+1<CR>==
-nnoremap ˚ :m .-2<CR>==
-inoremap ∆ <Esc>:m .+1<CR>==gi
-inoremap ˚ <Esc>:m .-2<CR>==gi
-vnoremap ∆ :m '>+1<CR>gv=gv
-vnoremap ˚ :m '<-2<CR>gv=gv
+nnoremap Ã¢ÂÂ :m .+1<CR>==
+nnoremap ÃÂ :m .-2<CR>==
+inoremap Ã¢ÂÂ <Esc>:m .+1<CR>==gi
+inoremap ÃÂ <Esc>:m .-2<CR>==gi
+vnoremap Ã¢ÂÂ :m '>+1<CR>gv=gv
+vnoremap ÃÂ :m '<-2<CR>gv=gv
 
 if &term =~ '^screen'
     " tmux will send xterm-style keys when its xterm-keys option is on
@@ -110,4 +110,11 @@ if g:hardcoreMode == 1
     inoremap <right> <nop>
 endif
 
+nnoremap ÃÂª :m .+1<CR>==
+nnoremap ÃÂº :m .-2<CR>==
 
+inoremap ÃÂª <Esc>:m .+1<CR>==gi
+inoremap ÃÂº <Esc>:m .-2<CR>==gi
+
+vnoremap ÃÂª :m '>+1<CR>gv=gv
+vnoremap ÃÂº :m '<-2<CR>gv=gv

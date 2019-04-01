@@ -5,8 +5,25 @@
 " source: https://github.com/krampstudio/dotvim
 " year  : 2015
 "
-
 " TODO split by plugin ?
+
+let g:vim_php_refactoring_auto_validate_visibility = 1
+
+let g:ycm_path_to_python_interpreter="/usr/bin/python"
+let g:ycm_register_as_syntastic_checker = 0
+
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+
+set tags=.git/tags
+
+let g:jsx_ext_required = 0
+
+let g:php_namespace_sort_after_insert = 1
 
 let g:ctrlp_cmd = ':NERDTreeClose\|CtrlP'
 let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|git\|web/assets\|web/js/react\|web/js_default/react\|\.php\.html'

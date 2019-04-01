@@ -30,6 +30,10 @@ let s:configAutocmd  = g:vimDir.'/config/autocmd.vim'
 
 let s:userConfig  = g:vimDir.'/local.vim'
 
+let g:NERDTreeDirArrows=0
+"let NERDTreeDirArrowExpandable = ' '     " make arrows invisible
+"let NERDTreeDirArrowCollapsible = ' '    " make arrows invisible
+
 if !isdirectory(s:pluginDir)
 
     " Welcome message when plugins are not yet installed
